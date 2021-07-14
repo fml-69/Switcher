@@ -1,18 +1,24 @@
 package com.gas.switcher;
 
+import com.badlogic.gdx.audio.Sound;
+import com.gas.switcher.management.Prefs;
 import com.gas.switcher.management.SceneManager;
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.assets.AssetManager;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.gas.switcher.scenes.Board;
 import com.gas.switcher.utils.AssetPaths;
+import com.gas.switcher.utils.Levels;
 
 public class Switcher extends Game {
 
 	public SceneManager sceneManager;
 	public AssetManager assetManager;
 	public SpriteBatch batch;
+	public Prefs prefs;
+	private Sound click;
 
 
 	public static int SCALE_WIDTH = 1080;
@@ -22,9 +28,14 @@ public class Switcher extends Game {
 
 	public static int FPS = 60;
 
+	private boolean soundEffectsOn = true;
+
+	private int level;
+
 
 	@Override
 	public void create () {
+		click = Gdx.audio.newSound(Gdx.files.internal("click.wav"));
 
 		if(Gdx.graphics.getHeight()<Gdx.graphics.getWidth()){
 			scaleFactorX = Gdx.graphics.getWidth()/SCALE_WIDTH;
@@ -37,6 +48,8 @@ public class Switcher extends Game {
 		assetManager = new AssetManager();
 		loadAssets();
 		sceneManager = new SceneManager(this);
+		prefs = new Prefs();
+		Levels.initLevels();
 
 	}
 
@@ -53,9 +66,39 @@ public class Switcher extends Game {
 	}
 
 	private void loadAssets(){
-		assetManager.load(AssetPaths.BOARD_BACKGROUND, Texture.class);
+		assetManager.load(AssetPaths.BACKGROUND, Texture.class);
+		assetManager.load(AssetPaths.BUTTON, Texture.class);
+		assetManager.load(AssetPaths.SHADOW_OUT, Texture.class);
+		assetManager.load(AssetPaths.SHADOW_IN, Texture.class);
+		assetManager.load(AssetPaths.BUTTON_SHADOWGATE, Texture.class);
+		assetManager.load(AssetPaths.BUTTON_CIRCLE, Texture.class);
+		assetManager.load(AssetPaths.BUTTON_CHECK, Texture.class);
+		assetManager.load(AssetPaths.BUTTON_BACK, Texture.class);
+		assetManager.load(AssetPaths.BUTTON_FIVE, Texture.class);
+		assetManager.load(AssetPaths.BUTTON_NINE, Texture.class);
+		assetManager.load(AssetPaths.BUTTON_SANDWICH, Texture.class);
+		assetManager.load(AssetPaths.BUTTON_RETRY, Texture.class);
 
 		assetManager.finishLoading();
 	}
 
+	public boolean isSoundEffectsOn() {
+		return soundEffectsOn;
+	}
+
+	public void setSoundEffectsOn(boolean soundEffectsOn) {
+		this.soundEffectsOn = soundEffectsOn;
+	}
+
+	public int getLevel() {
+		return level;
+	}
+
+	public void setLevel(int level) {
+		this.level = level;
+	}
+
+	public Sound getClick(){
+		return click;
+	}
 }

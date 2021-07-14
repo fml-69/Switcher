@@ -32,4 +32,5 @@ public abstract class AbstractScene implements Screen {
     public void dispose() {
         this.stage.dispose();
     }
+
 }

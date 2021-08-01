@@ -16,6 +16,7 @@ public final class AssetPaths {
     public static final String BUTTON_NINE = "button_nine.png";
     public static final String BUTTON_SANDWICH = "button_sandwich.png";
     public static final String BUTTON_RETRY = "button_retry.png";
+    public static final String BUTTON_SOUND = "button_sound.png";
 
 }
 

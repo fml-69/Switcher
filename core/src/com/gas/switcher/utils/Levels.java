@@ -11,11 +11,11 @@ public class Levels {
         levels.add(new boolean[][]{{false, true, false},{true,true,true},{false,true,false}});
         levels.add(new boolean[][]{{true, true, true},{true,true,true},{true,true,true}});
         levels.add(new boolean[][]{{false, true, false},{true,true,true},{false,true,false}});
-        levels.add(new boolean[][]{{true, true, true},{true,true,true},{true,true,true}});
+        levels.add(new boolean[][]{{true, false, true},{true,true,true},{true,true,false}});
         levels.add(new boolean[][]{{false, true, false},{true,true,true},{false,true,false}});
         levels.add(new boolean[][]{{true, true, true},{true,true,true},{true,true,true}});
         levels.add(new boolean[][]{{false, true, false},{true,true,true},{false,true,false}});
-        levels.add(new boolean[][]{{true, true, true},{true,true,true},{true,true,true}});
+        levels.add(new boolean[][]{{false, true, true},{true,true,false},{false,true,true}});
         levels.add(new boolean[][]{{false, true, false},{true,true,true},{false,true,false}});
     }
 

@@ -44,7 +44,7 @@ public class Options extends AbstractScene {
         Gdx.input.setInputProcessor(stage);
         stage.clear();
         stage.addActor(background);
-        soundSwitch = new UniversalButton(switcher, (Texture) switcher.assetManager.get(AssetPaths.BUTTON_CHECK), "soundSwitch", 0);
+        soundSwitch = new UniversalButton(switcher, (Texture) switcher.assetManager.get(AssetPaths.BUTTON_SOUND), "soundSwitch", 0);
         soundSwitch.spritePos(415, 835);
         stage.addActor(soundSwitch);
         resetStats = new UniversalButton(switcher, (Texture) switcher.assetManager.get(AssetPaths.BUTTON_RETRY), "resetStats", 1);

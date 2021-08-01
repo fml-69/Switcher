@@ -78,6 +78,7 @@ public class Switcher extends Game {
 		assetManager.load(AssetPaths.BUTTON_NINE, Texture.class);
 		assetManager.load(AssetPaths.BUTTON_SANDWICH, Texture.class);
 		assetManager.load(AssetPaths.BUTTON_RETRY, Texture.class);
+		assetManager.load(AssetPaths.BUTTON_SOUND, Texture.class);
 
 		assetManager.finishLoading();
 	}
